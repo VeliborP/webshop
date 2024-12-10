@@ -89,7 +89,7 @@ namespace Ubique.Areas.Admin.Controllers
 				}
 			}
 
-			TempData["success"] = "Utente aggiornato.";
+			TempData["success"] = "User updated.";
 
 			return RedirectToAction("Index");
 		}
@@ -120,7 +120,7 @@ namespace Ubique.Areas.Admin.Controllers
 
 			if (fromDb == null)
 			{
-				return Json(new { success = false, message = "Errore durante il Locking/Unlocking." });
+				return Json(new { success = false, message = "Error during Locking/Unlocking." });
 			}
 
 			if (fromDb.LockoutEnd != null && fromDb.LockoutEnd > DateTime.Now)
@@ -136,7 +136,7 @@ namespace Ubique.Areas.Admin.Controllers
 			_unitOfWork.ApplicationUser.Update(fromDb);
 			_unitOfWork.Save();
 
-			return Json(new { success = true, message = "Operazione Compiuta" });
+			return Json(new { success = true, message = "Operation Completed" });
 		}
 
 		#endregion
